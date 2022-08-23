@@ -1,13 +1,14 @@
-import * as React from 'react';
+import React , {useState} from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+// import { TextField } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -52,30 +53,44 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Appbar() {
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="absolute">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-        //    sx ={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
+export default function Appbar(props) {
+  const [value, setValue] = useState(
+    {
+      word: ''
+    }
+  )
+
+const handleChange =e=>{
+  setValue(e.target.value)
+}
+
+const handleSubmit =(e)=>{
+    if(e.key === "Enter") {
+       e.preventDefault()
+      //  alert(`${e.target.value}`)
+       props.onDoubleClick(e.target.value) 
+  }
+}
+
+return (
+  <div >
+    <Box sx={{ flexGrow: 1 }}  >
+      <AppBar position="absolute" >
+      <Toolbar style={{width: '100vh'}}>
+          <Typography variant="h6" noWrapcomponent="div">
             Vocab
           </Typography>
-          <Search>
+          <></>
+          <Search position="center">
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+            <StyledInputBase  placeholder="Search…" inputProps={{ 'aria-label': 'search' }} value={value.word} onChange={handleChange}  onKeyDownCapture={handleSubmit}/>
+            {/* <TextField></TextField> */}
+          </Search> 
         </Toolbar>
       </AppBar>
     </Box>
+  </div>
   );
 }
