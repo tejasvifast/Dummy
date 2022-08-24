@@ -20,12 +20,12 @@ app.use('/', route)
 
 //isAdded
 
-// if(process.env.NODE_ENV === "production"){
-//     app.use(express.static('client/build'))
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.resolved(__dirname, 'client', 'build', 'index.html'))
-//     })
-// }
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static('client/build'))
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolved(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 app.listen(port, function(){
     console.log("express is running");
