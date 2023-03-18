@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use(cors())
+app.use(cors('*'))
 
 mongoose.connect("mongodb+srv://pragya_user1:tfr9Y2SlmidKsL1L@cluster0.e7bog.mongodb.net/Express-React", {
     useNewUrlParser: true
@@ -28,5 +28,9 @@ if(process.env.NODE_ENV === "production"){
 }
 
 app.listen(port, function(){
-    console.log("express is running");
+    console.log("express is running",port);
 })
+
+
+
+//https://warm-island-82496.herokuapp.com

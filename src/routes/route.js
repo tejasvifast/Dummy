@@ -1,14 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const {Dictionary} = require('../controllers/vocabController')
-const {addToDB} = require('../controllers/addToDbController')
-const {getAddedWords} = require('../controllers/getAddedWordsController')
-const {wordDetails}=require('../controllers/wordDetails')
+const {searchedWordandDb} = require('../controllers/searchWordandAddtoDb')
+const {getAllAddedWords} = require('../controllers/getAllAddedWordsController')
+const {detailedSearchedWord}=require('../controllers/detailedSearchedWord')
 
-router.post('/Dictionary', Dictionary)
-router.post('/addToDB', addToDB)
-router.get('/getAddedWords', getAddedWords)
-router.post('/wordDetails',wordDetails)
+router.post('/Dictionary', searchedWordandDb)
+router.get('/getAddedWords', getAllAddedWords)
+router.post('/wordDetails',detailedSearchedWord)
 
 module.exports = router

@@ -1,0 +1,114 @@
+.Main {
+    text-align: center;
+  }
+  
+  .Main-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .Main-logo {
+      animation: Main-logo-spin infinite 20s linear;
+    }
+  }
+  
+  .Main-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .Main-link {
+    color: #61dafb;
+  }
+  
+  @keyframes Main-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* .box1{
+    width: 100%,
+    
+  } */
+
+  .tbody{
+    border: #282c34 solid 2px;
+  }
+
+// .custom-row-class-2{
+//   border: #000000 solid 2px;
+  
+// }
+
+.bootstrap-row{
+  //border: #000000 solid 2px;
+  // width: 5000px;
+  // background-color: aquamarine;
+}
+
+.tr{
+  
+}
+  
+.table-striped{
+  tbody tr:nth-of-type(odd) {
+    background-color: rgb(184, 252, 191);
+  }
+}
+
+.table-hover{
+  tbody {
+    background-color: rgb(198, 172, 244);
+  }
+}
+
+.tbody tr{
+  background-color: rgb(198, 172, 244);
+}
+
+.bootstrap-header{
+  background-color: rgb(249, 77, 249);
+}
+.pagination-style .react-bootstrap-table-pagination {
+  background-color: #0d7206;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: azure;
+  
+}
+
+.searched-word{
+  width: auto;
+  background-color: gainsboro;
+  border-style: groove;
+  border-radius: 2%;
+}
+
+.custom-row-class-2{
+  background-color: #06721f;
+}
+
+.buttontabledata{
+  overflow: scroll;
+  height: 330px;
+}
+
+.ip-address{
+  height: 100px;
+  width: 200px;
+  border: #282c34 1px solid;
+}
